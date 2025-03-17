@@ -47,18 +47,3 @@ body {
 * {
   box-sizing: border-box;
 }
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #F7F8FA;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb {
-  background: #C9CDD4;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #86909C;
-}

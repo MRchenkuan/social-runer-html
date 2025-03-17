@@ -43,8 +43,8 @@ import Header from './components/Header.vue'
 }
 
 .content {
-  margin-left: 250px;
-  padding: 20px;
+  margin-left: 260px;
+  padding: 0 10px;
   background: @background-color;
   min-height: calc(100vh - 120px);
 }

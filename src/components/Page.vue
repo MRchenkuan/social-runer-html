@@ -49,18 +49,13 @@ const props = defineProps({
 
   .page-header {
     position: sticky;
-    top: 80px;
+    top: 60px;
     z-index: 10;
     padding: 16px 24px;
     background: var(--color-bg-2);
     border-bottom: 1px solid var(--color-border);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     transition: all 0.3s;
-
-    &.is-sticky {
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
   }
 
   .breadcrumb {

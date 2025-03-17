@@ -82,7 +82,7 @@ const handleMenuClick = (key) => {
 <style lang="less" scoped>
 .nav-menu {
   position: fixed;
-  top: 80px;
+  top: 60px;
   left: 10px;
   width: 250px;
   border-radius: 8px;

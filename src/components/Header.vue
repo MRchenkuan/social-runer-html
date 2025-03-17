@@ -47,7 +47,7 @@ import { IconUser, IconSettings, IconExport } from '@arco-design/web-vue/es/icon
   
   .polyfill {
     display: block;
-    height: 20px;
+    height: 10px;
     width: 100%;
     background: #f5f5f5;
   }
@@ -62,7 +62,7 @@ import { IconUser, IconSettings, IconExport } from '@arco-design/web-vue/es/icon
     align-items: center;
     background: #64346c;
     padding: 0 20px;
-    height: 60px;
+    height: 50px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   }
 
