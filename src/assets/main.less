@@ -1,0 +1,61 @@
+// Variables
+@font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+@primary-color: #165DFF;
+@text-color: #1D2129;
+@background-color: #f5f5f5;
+
+// Mixins
+.flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global styles
+:root {
+  font-family: @font-family;
+  line-height: 1.5;
+  font-weight: 400;
+  color: @text-color;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: @background-color;
+}
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+}
+
+// Layout styles
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  .flex-center();
+  padding: 0 20px;
+  background: @primary-color;
+}
+
+.content {
+  padding: 20px;
+  background: @background-color;
+  min-height: calc(100vh - 120px);
+}
+
+.welcome-card {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.footer {
+  .flex-center();
+  padding: 20px;
+  background: #fff;
+  border-top: 1px solid #e5e6eb;
+} 

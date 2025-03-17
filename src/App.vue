@@ -1,23 +1,13 @@
 <template>
   <div class="app">
     <a-layout>
-      <a-layout-header class="header">
-        <a-space>
-          <a-typography-title :heading="3" style="margin: 0; color: white;">
-            Social Runner
-          </a-typography-title>
-          <a-button type="primary">开始跑步</a-button>
-        </a-space>
-      </a-layout-header>
-      <a-layout-content class="content">
-        <a-card class="welcome-card">
-          <template #title>欢迎使用 Social Runner</template>
-          <template #extra>
-            <a-button type="text">了解更多</a-button>
-          </template>
-          <p>这是一个使用 Arco Design Vue 构建的跑步社交应用</p>
-        </a-card>
-      </a-layout-content>
+      <Header />
+      <a-layout class="main-layout">
+        <nav-menu/>
+        <a-layout-content class="content">
+          <router-view></router-view>
+        </a-layout-content>
+      </a-layout>
       <a-layout-footer class="footer">
         <a-typography-text>© 2024 Social Runner</a-typography-text>
       </a-layout-footer>
@@ -26,36 +16,41 @@
 </template>
 
 <script setup>
-// Component logic here
+import NavMenu from './components/NavMenu.vue'
+import Header from './components/Header.vue'
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+// Variables
+@primary-color: #165DFF;
+@text-color: #1D2129;
+@background-color: #f5f5f5;
+
+// Mixins
+.flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .app {
   min-height: 100vh;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  background: #165DFF;
+.main-layout {
+  margin-top: 60px;
+  min-height: calc(100vh - 60px);
 }
 
 .content {
+  margin-left: 250px;
   padding: 20px;
-  background: #f5f5f5;
+  background: @background-color;
   min-height: calc(100vh - 120px);
 }
 
-.welcome-card {
-  max-width: 600px;
-  margin: 20px auto;
-}
-
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .flex-center();
   padding: 20px;
   background: #fff;
   border-top: 1px solid #e5e6eb;
