@@ -1,0 +1,24 @@
+<template>
+  <div class="app">
+    <h1>Welcome to Social Runner</h1>
+  </div>
+</template>
+
+<script setup>
+// Component logic here
+</script>
+
+<style scoped>
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.6em;
+  line-height: 1.1;
+  color: #2c3e50;
+}
+</style> 
