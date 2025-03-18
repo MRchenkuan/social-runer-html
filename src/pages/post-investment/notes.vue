@@ -1,5 +1,7 @@
 <template>
   <Page title="投后笔记">
+    <data-board />
+    <search-form @search="handleSearch" />
     <a-card>
       <template #title>
         <a-space>
@@ -37,6 +39,8 @@ import { ref, nextTick } from 'vue'
 import Page from '../../components/Page.vue'
 import XhsPostPreview from '@/components/XhsPostPreview.vue'
 import XhsLogo from '@/components/XhsLogo.vue'  // Fixed import path
+import DataBoard from '@/components/DataBoard.vue'
+import SearchForm from '@/components/SearchForm.vue'
 
 const xhsPreview = ref(null)
 
@@ -157,6 +161,11 @@ const handleEdit = (record) => {
 // 移除未使用的 openDrawer 方法
 const handleDelete = (record) => {
   console.log('Delete note:', record)
+}
+
+const handleSearch = (formData) => {
+  console.log('搜索条件：', formData)
+  // 实现搜索逻辑
 }
 </script>
 

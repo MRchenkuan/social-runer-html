@@ -1,5 +1,7 @@
 <template>
   <Page title="投后评论">
+    <data-board />
+    <search-form @search="handleSearch" />
     <a-card>
       <template #title>
         <a-space>
@@ -36,6 +38,8 @@ import { ref, nextTick } from 'vue'
 import Page from '../../components/Page.vue'
 import XhsPostPreview from '@/components/XhsPostPreview.vue'
 import XhsLogo from '@/components/XhsLogo.vue'  // 修改了导入路径
+import DataBoard from '@/components/DataBoard.vue'
+import SearchForm from '@/components/SearchForm.vue'
 
 const xhsPreview = ref(null)
 
@@ -111,7 +115,10 @@ const handleDelete = (record) => {
   console.log('Delete comment:', record)
 }
 
-
+const handleSearch = (formData) => {
+  console.log('搜索条件：', formData)
+  // 实现搜索逻辑
+}
 </script>
 
 <style scoped>

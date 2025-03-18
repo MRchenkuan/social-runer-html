@@ -10,9 +10,11 @@
         <a-sub-menu>
           <template #icon><component :is="item.icon" /></template>
           <template #title>{{ item.title }}</template>
-          <a-menu-item v-for="child in item.children" :key="child.key">
-            <router-link :to="child.path">{{ child.title }}</router-link>
-          </a-menu-item>
+          <router-link v-for="child in item.children" :key="child.key" :to="child.path">
+            <a-menu-item >
+            {{ child.title }}
+            </a-menu-item>
+          </router-link>
         </a-sub-menu>
       </template>
     </a-menu>
