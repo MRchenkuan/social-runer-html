@@ -33,6 +33,14 @@
   --font-size-large: 16px;
   --font-size-extra-large: 18px;
 }
+html {
+  font-size: 16px;
+}
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+}
 html,
 body {
   margin: 0;
@@ -43,7 +51,61 @@ body {
   font-size: 14px;
   color: #1D2129;
   background-color: #F5F5F5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 * {
   box-sizing: border-box;
+}
+@media screen and (max-width: 480px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1320px;
+  }
 }

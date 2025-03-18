@@ -1,5 +1,13 @@
 @import './variables.less';
 
+// 响应式断点
+@screen-xs: 480px;
+@screen-sm: 576px;
+@screen-md: 768px;
+@screen-lg: 992px;
+@screen-xl: 1200px;
+@screen-xxl: 1600px;
+
 :root {
   // 主题色
   --color-primary: @primary-color;
@@ -52,6 +60,13 @@
 }
 
 // 全局样式
+html {
+  font-size: 16px; // 基准字体大小
+  @media screen and (max-width: @screen-sm) {
+    font-size: 14px;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -63,8 +78,60 @@ html, body {
   font-size: @font-size-medium;
   color: @text-color;
   background-color: @background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 * {
   box-sizing: border-box;
+}
+
+// 响应式工具类
+.hidden-xs {
+  @media screen and (max-width: @screen-xs) {
+    display: none !important;
+  }
+}
+
+.hidden-sm {
+  @media screen and (max-width: @screen-sm) {
+    display: none !important;
+  }
+}
+
+.hidden-md {
+  @media screen and (max-width: @screen-md) {
+    display: none !important;
+  }
+}
+
+.hidden-lg {
+  @media screen and (max-width: @screen-lg) {
+    display: none !important;
+  }
+}
+
+// 响应式容器
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: @screen-sm) {
+    max-width: 540px;
+  }
+  @media (min-width: @screen-md) {
+    max-width: 720px;
+  }
+  @media (min-width: @screen-lg) {
+    max-width: 960px;
+  }
+  @media (min-width: @screen-xl) {
+    max-width: 1140px;
+  }
+  @media (min-width: @screen-xxl) {
+    max-width: 1320px;
+  }
 } 

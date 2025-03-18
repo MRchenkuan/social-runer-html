@@ -16,7 +16,7 @@
           <a-space>
             <a-button type="text" size="small" @click="handleEdit(record)">
               <template #icon><icon-edit /></template>
-              编辑
+              查看
             </a-button>
             <a-button type="text" size="small" status="danger" @click="handleDelete(record)">
               <template #icon><icon-delete /></template>
@@ -26,13 +26,19 @@
         </template>
       </a-table>
     </a-card>
+
+    <xhs-post-preview ref="xhsPreview" />
+
   </Page>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import Page from '../../components/Page.vue'
-import { IconPlus, IconEdit, IconDelete } from '@arco-design/web-vue/es/icon'
+import XhsPostPreview from '@/components/XhsPostPreview.vue'
+import XhsLogo from '@/components/XhsLogo.vue'  // Fixed import path
+
+const xhsPreview = ref(null)
 
 const columns = [
   {
@@ -124,9 +130,31 @@ const data = ref([
 ])
 
 const handleEdit = (record) => {
-  console.log('Edit note:', record)
+  // 构造小红书帖子格式的数据
+  const postData = {
+    images: ['https://placeholder.com/400x300'],  // 示例图片
+    title: record.title,
+    content: record.title,
+    tags: ['投后管理', '项目笔记'],
+    location: '广东',
+    time: record.createTime,
+    comments: [
+      {
+        id: 1,
+        username: '系统',
+        avatar: '',
+        content: '创建了笔记',
+        time: record.createTime,
+        location: '广东',
+        likes: 0
+      }
+    ]
+  }
+  
+  xhsPreview.value?.open(postData)
 }
 
+// 移除未使用的 openDrawer 方法
 const handleDelete = (record) => {
   console.log('Delete note:', record)
 }
@@ -136,4 +164,4 @@ const handleDelete = (record) => {
 .arco-card {
   margin: 16px;
 }
-</style> 
+</style>
